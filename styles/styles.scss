@@ -1,11 +1,12 @@
 *{
   padding: 0%;
   margin: 0%;
+  font-family: 'Montserrat', sans-serif;
 }
 $pink:#fdf9f8;
 
 .pageContainer{
-  width: 1200px;
+  width: 960px;
   margin-left: auto;
   margin-right: auto;
   height: 100vh;
@@ -17,6 +18,13 @@ $pink:#fdf9f8;
     background-color: magenta;
     width: 0%;
     height: 100%;
+    & h1{
+      display: none;
+      width: 100%;
+      height: 10%;
+      font-size: 2rem;
+      text-align: left;
+    }
     
   }
   &--info{
@@ -26,7 +34,6 @@ $pink:#fdf9f8;
     height: 100%;
     width: 30%;
     border-right: thick solid rgb(226, 224, 224);
-    font-family: 'Montserrat', sans-serif;
     &--image{
       display: flexbox;
       width: 100%;
@@ -45,6 +52,7 @@ $pink:#fdf9f8;
       border-bottom: gray thin solid;
       text-align: center;
       font-size: 0.9rem;
+      overflow-y: auto;
       
     }
     &--icons{
@@ -59,42 +67,45 @@ $pink:#fdf9f8;
       width: 90%;
       height: 45%;
       background-color: $pink;
-      justify-content: center;
+
       flex-direction: column;
       align-items: center;
       & ul{
-        height: 85%;
+        height: 70%;
         width: 100%;
         border: white solid thick;
+        overflow-y: scroll;
         & p{
           text-align: center;
         }
         & li{
           margin-left: 30px;
+          &:hover{
+            background-color: purple;
+            cursor: pointer;
+            color: white;
+          }
         }
       }
       & .form{
         display: flexbox;
         width: 100%;
-        height: 15%;
+        height: 20%;
         & .textarea{
           width: 99%;
-          height: 10%;
+          height: 49%;
+          font-size: 1.5rem;
         }
         & .addTodo{
           width: 100%;
-          height: 10%;
+          height: 49%;
           background-color: yellowgreen;
         }
-        & .removeTodo{
-          width: 100%;
-          height: 10%;
-        }
-        
       }
     }
   }
   &--main{
+    overflow-y: scroll;
     display: flexbox;
     height: 100%;
     width: 70%;
@@ -103,6 +114,9 @@ $pink:#fdf9f8;
       width: 100%;
       height: 30%;
       border-bottom: solid thin gray;
+      background: url(/images/background1.png) no-repeat;
+      background-size: contain;
+      background-position: center;
       justify-content: center;
       align-items: center;
       &-pic{
@@ -111,14 +125,65 @@ $pink:#fdf9f8;
         height: 100%;
         width: 100%;
       }
-      &-title{
+      & h1{
         display: flexbox;
-        position: absolute;
-        font-family: 'Montserrat', sans-serif;
         font-size: 4rem;
-        color: red;
+        color: purple;
         text-shadow: black 2px 2px ;
+        
+      }
+    }
+    &--navbar{
+      display: flex;
+      height: 5%;
+      width: 100%;
+      border-bottom: solid thin gray;
+      flex-direction: row;
+      align-items: center;
+      & h1{
+        width: 100%;
+        text-align: center;
+
+        & a{
+          text-decoration: none;
+          color:gray ;
+          width: 100%;
+          &:hover{
+            width: 100%;
+            background-color: rgb(243, 234, 234);
+            color: purple;
+          }
+        }
+      }
+    }
+    &--blogArea{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      width: 100%;
+      height:64% ;
+      & article{
+        width: 100%;
+        height: auto;
+        border:thin solid gray;
+        display: flex;
+        cursor: pointer;
+        &:hover{
+          background-color: rgb(243, 234, 234);
+        }
+        & .profileImage{
+          width: 10%;
+          height: 100%;
+          img{
+            object-fit: contain;
+            width: 100%;
+          }
+        }
+        & p{
+          width:80% ;
+        }
       }
     }
   }
+
 }
